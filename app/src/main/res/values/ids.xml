@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="infoTextView" type="id" />
+    <item name="buttonSeven" type="id" />
+    <item name="buttonEight" type="id" />
+    <item name="buttonNine" type="id" />
+    <item name="buttonDot" type="id" />
+    <item name="buttonZero" type="id" />
+    <item name="buttonEqual" type="id" />
+    <item name="buttonDivide" type="id" />
+    <item name="buttonMultiply" type="id" />
+    <item name="buttonSubtract" type="id" />
+    <item name="buttonAdd" type="id" />
+    <item name="buttonClear" type="id" />
+    <item name="editText" type="id" />
+</resources>
