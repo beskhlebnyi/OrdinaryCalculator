@@ -87,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         btn_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,6 +105,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ed1.setText(ed1.getText()+"9");
+            }
+        });
+
+        btn_dec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ed1.setText(ed1.getText()+".");
+            }
+        });
+
+        btn_clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ed1.getText().clear();
             }
         });
 
@@ -136,12 +149,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn_Div.setOnClickListener(new View.OnClickListener() {
+        btn_Sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Value1 = Float.parseFloat(ed1.getText() + "");
-                mDivision = true ;
+                mSubtract = true ;
                 ed1.setText(null);
+            }
+        });
+
+        btn_calc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Value2 = Float.parseFloat(ed1.getText() + "");
+
+                if (mSubtract == true){
+                    ed1.setText(Value1 - Value2 +"");
+                    mSubtract=false;
+                }
+
+                if (mAddition == true){
+                    ed1.setText(Value1 + Value2 +"");
+                    mAddition=false;
+                }
+
+                if (mMultiplication == true){
+                    ed1.setText(Value1 * Value2 +"");
+                    mMultiplication=false;
+                }
+
+                if (mDivision == true){
+                    ed1.setText(Value1 / Value2 +"");
+                    mDivision=false;
+                }
+
+
             }
         });
 
