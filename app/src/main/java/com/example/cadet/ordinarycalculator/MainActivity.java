@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ed1 = (EditText) findViewById(R.id.edText1);
+        ed1.requestFocus();
+        ed1.setShowSoftInputOnFocus(false);
 
         btn_clear = (Button) findViewById(R.id.btn_clear);
         btn_dec = (Button) findViewById(R.id.btn_dec);
@@ -179,8 +181,13 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (mDivision == true){
-                    ed1.setText(Value1 / Value2 +"");
-                    mDivision=false;
+                    if (Value2 == 0) {
+                        ed1.setText("∞");
+                    }
+                    else {
+                        ed1.setText(Value1 / Value2 + "");
+                    }
+                    mDivision = false;
                 }
 
 

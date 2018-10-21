@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
 
     android:layout_width="368dp"
@@ -186,9 +187,9 @@
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:textAlignment="textEnd"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:windowSoftInputMode="stateHidden"/>
 
     <Button
         android:id="@+id/btn_calc"
