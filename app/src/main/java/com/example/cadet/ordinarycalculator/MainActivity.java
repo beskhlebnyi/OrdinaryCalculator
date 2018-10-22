@@ -7,7 +7,8 @@ import android.widget.EditText;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    Button btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_0, btn_Add, btn_Sub, btn_Mul, btn_Div, btn_calc, btn_dec, btn_clear;
+    Button btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_0, btn_Add, btn_Sub,
+            btn_Mul, btn_Div, btn_calc, btn_dec, btn_clear;
     EditText ed1;
     float Value1, Value2;
     boolean mAddition, mSubtract, mMultiplication, mDivision ;
@@ -124,70 +125,97 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         btn_Mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Value1 = Float.parseFloat(ed1.getText() + "");
-                mMultiplication = true ;
-                ed1.setText(null);
+
+                if((ed1.getText().toString().equals("")) || (mMultiplication == true)) {
+                    mMultiplication = false;
+                }
+                else {
+                    Value1 = Float.parseFloat(ed1.getText() + "");
+                    mMultiplication = true;
+                    ed1.setText(null);
+                }
             }
         });
 
         btn_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Value1 = Float.parseFloat(ed1.getText() + "");
-                mAddition = true ;
-                ed1.setText(null);
+
+                if((ed1.getText().toString().equals("")) || (mAddition == true)) {
+                    mAddition = false;
+                }
+                else {
+                    Value1 = Float.parseFloat(ed1.getText() + "");
+                    mAddition = true;
+                    ed1.setText(null);
+                }
+
             }
         });
 
         btn_Div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Value1 = Float.parseFloat(ed1.getText() + "");
-                mDivision = true ;
-                ed1.setText(null);
+
+                if((ed1.getText().toString().equals("")) || (mDivision == true)) {
+                    mDivision = false;
+                }
+                else {
+                    Value1 = Float.parseFloat(ed1.getText() + "");
+                    mDivision = true;
+                    ed1.setText(null);
+                }
             }
         });
 
         btn_Sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Value1 = Float.parseFloat(ed1.getText() + "");
-                mSubtract = true ;
-                ed1.setText(null);
+
+                if((ed1.getText().toString().equals("")) || (mSubtract == true)) {
+                    mSubtract = false;
+                }
+                else {
+                    Value1 = Float.parseFloat(ed1.getText() + "");
+                    mSubtract = true;
+                    ed1.setText(null);
+                }
             }
         });
 
         btn_calc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Value2 = Float.parseFloat(ed1.getText() + "");
+                if(!ed1.getText().toString().equals("")) {
+                    Value2 = Float.parseFloat(ed1.getText() + "");
 
-                if (mSubtract == true){
-                    ed1.setText(Value1 - Value2 +"");
-                    mSubtract=false;
-                }
-
-                if (mAddition == true){
-                    ed1.setText(Value1 + Value2 +"");
-                    mAddition=false;
-                }
-
-                if (mMultiplication == true){
-                    ed1.setText(Value1 * Value2 +"");
-                    mMultiplication=false;
-                }
-
-                if (mDivision == true){
-                    if (Value2 == 0) {
-                        ed1.setText("∞");
+                    if (mSubtract == true) {
+                        ed1.setText(Value1 - Value2 + "");
+                        mSubtract = false;
                     }
-                    else {
-                        ed1.setText(Value1 / Value2 + "");
+
+                    if (mAddition == true) {
+                        ed1.setText(Value1 + Value2 + "");
+                        mAddition = false;
                     }
-                    mDivision = false;
+
+                    if (mMultiplication == true) {
+                        ed1.setText(Value1 * Value2 + "");
+                        mMultiplication = false;
+                    }
+
+                    if (mDivision == true) {
+                        if (Value2 == 0) {
+                            ed1.setText("∞");
+                        } else {
+                            ed1.setText(Value1 / Value2 + "");
+                        }
+                        mDivision = false;
+                    }
                 }
 
 
