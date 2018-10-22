@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
             btn_Mul, btn_Div, btn_calc, btn_dec, btn_clear;
     EditText ed1;
     float Value1, Value2;
-    boolean mAddition, mSubtract, mMultiplication, mDivision ;
+    boolean mAddition, mSubtract, mMultiplication, mDivision, mDot ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +114,10 @@ public class MainActivity extends AppCompatActivity {
         btn_dec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ed1.setText(ed1.getText()+".");
+                if (mDot == false){
+                    ed1.setText(ed1.getText()+".");
+                    mDot = true;
+                }
             }
         });
 
@@ -137,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
                     Value1 = Float.parseFloat(ed1.getText() + "");
                     mMultiplication = true;
                     ed1.setText(null);
+                    mDot = false;
                 }
             }
         });
@@ -152,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
                     Value1 = Float.parseFloat(ed1.getText() + "");
                     mAddition = true;
                     ed1.setText(null);
+                    mDot = false;
                 }
 
             }
@@ -168,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
                     Value1 = Float.parseFloat(ed1.getText() + "");
                     mDivision = true;
                     ed1.setText(null);
+                    mDot = false;
                 }
             }
         });
@@ -183,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
                     Value1 = Float.parseFloat(ed1.getText() + "");
                     mSubtract = true;
                     ed1.setText(null);
+                    mDot = false;
                 }
             }
         });
@@ -196,16 +203,19 @@ public class MainActivity extends AppCompatActivity {
                     if (mSubtract == true) {
                         ed1.setText(Value1 - Value2 + "");
                         mSubtract = false;
+                        mDot = false;
                     }
 
                     if (mAddition == true) {
                         ed1.setText(Value1 + Value2 + "");
                         mAddition = false;
+                        mDot = false;
                     }
 
                     if (mMultiplication == true) {
                         ed1.setText(Value1 * Value2 + "");
                         mMultiplication = false;
+                        mDot = false;
                     }
 
                     if (mDivision == true) {
@@ -215,6 +225,8 @@ public class MainActivity extends AppCompatActivity {
                             ed1.setText(Value1 / Value2 + "");
                         }
                         mDivision = false;
+                        mDot = false;
+
                     }
                 }
 
