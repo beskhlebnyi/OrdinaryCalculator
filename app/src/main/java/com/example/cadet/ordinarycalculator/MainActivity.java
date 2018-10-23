@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!ed1.getText().toString().equals("∞")) {
                     if (ed1.getText().toString().equals("0")) {
                         ed1.setText("0.0");
+                        mDot = true;
                     } else {
                         ed1.setText(ed1.getText() + "0");
                     }
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!ed1.getText().toString().equals("∞")) {
                     if (ed1.getText().toString().equals("0")) {
                         ed1.setText("0.1");
+                        mDot = true;
                     } else {
                         ed1.setText(ed1.getText() + "1");
                     }
@@ -74,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!ed1.getText().toString().equals("∞")) {
                     if (ed1.getText().toString().equals("0")) {
                         ed1.setText("0.2");
+                        mDot = true;
                     } else {
                         ed1.setText(ed1.getText() + "2");
                     }
@@ -87,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!ed1.getText().toString().equals("∞")) {
                     if (ed1.getText().toString().equals("0")) {
                         ed1.setText("0.3");
+                        mDot = true;
                     } else {
                         ed1.setText(ed1.getText() + "3");
                     }
@@ -100,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!ed1.getText().toString().equals("∞")) {
                     if (ed1.getText().toString().equals("0")) {
                         ed1.setText("0.4");
+                        mDot = true;
                     } else {
                         ed1.setText(ed1.getText() + "4");
                     }
@@ -113,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!ed1.getText().toString().equals("∞")) {
                     if (ed1.getText().toString().equals("0")) {
                         ed1.setText("0.5");
+                        mDot = true;
                     } else {
                         ed1.setText(ed1.getText() + "5");
                     }
@@ -126,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!ed1.getText().toString().equals("∞")) {
                     if (ed1.getText().toString().equals("0")) {
                         ed1.setText("0.6");
+                        mDot = true;
                     } else {
                         ed1.setText(ed1.getText() + "6");
                     }
@@ -139,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!ed1.getText().toString().equals("∞")) {
                     if (ed1.getText().toString().equals("0")) {
                         ed1.setText("0.7");
+                        mDot = true;
                     } else {
                         ed1.setText(ed1.getText() + "7");
                     }
@@ -152,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!ed1.getText().toString().equals("∞")) {
                     if (ed1.getText().toString().equals("0")) {
                         ed1.setText("0.8");
+                        mDot = true;
                     } else {
                         ed1.setText(ed1.getText() + "8");
                     }
@@ -165,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!ed1.getText().toString().equals("∞")) {
                     if (ed1.getText().toString().equals("0")) {
                         ed1.setText("0.9");
+                        mDot = true;
                     } else {
                         ed1.setText(ed1.getText() + "9");
                     }
