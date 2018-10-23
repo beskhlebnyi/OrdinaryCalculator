@@ -44,79 +44,144 @@ public class MainActivity extends AppCompatActivity {
         btn_0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ed1.setText(ed1.getText()+"0");
+                if (!ed1.getText().toString().equals("∞")) {
+                    if (ed1.getText().toString().equals("0")) {
+                        ed1.setText("0.0");
+                    } else {
+                        ed1.setText(ed1.getText() + "0");
+                    }
+                }
             }
         });
+
 
         btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ed1.setText(ed1.getText()+"1");
+                if (!ed1.getText().toString().equals("∞")) {
+                    if (ed1.getText().toString().equals("0")) {
+                        ed1.setText("0.1");
+                    } else {
+                        ed1.setText(ed1.getText() + "1");
+                    }
+                }
             }
         });
 
         btn_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ed1.setText(ed1.getText()+"2");
+                if (!ed1.getText().toString().equals("∞")) {
+                    if (ed1.getText().toString().equals("0")) {
+                        ed1.setText("0.2");
+                    } else {
+                        ed1.setText(ed1.getText() + "2");
+                    }
+                }
             }
         });
 
         btn_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ed1.setText(ed1.getText()+"3");
+                if (!ed1.getText().toString().equals("∞")) {
+                    if (ed1.getText().toString().equals("0")) {
+                        ed1.setText("0.3");
+                    } else {
+                        ed1.setText(ed1.getText() + "3");
+                    }
+                }
             }
         });
 
         btn_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ed1.setText(ed1.getText()+"4");
+                if (!ed1.getText().toString().equals("∞")) {
+                    if (ed1.getText().toString().equals("0")) {
+                        ed1.setText("0.4");
+                    } else {
+                        ed1.setText(ed1.getText() + "4");
+                    }
+                }
             }
         });
 
         btn_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ed1.setText(ed1.getText()+"5");
+                if (!ed1.getText().toString().equals("∞")) {
+                    if (ed1.getText().toString().equals("0")) {
+                        ed1.setText("0.5");
+                    } else {
+                        ed1.setText(ed1.getText() + "5");
+                    }
+                }
             }
         });
 
         btn_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ed1.setText(ed1.getText()+"6");
+                if (!ed1.getText().toString().equals("∞")) {
+                    if (ed1.getText().toString().equals("0")) {
+                        ed1.setText("0.6");
+                    } else {
+                        ed1.setText(ed1.getText() + "6");
+                    }
+                }
             }
         });
 
         btn_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ed1.setText(ed1.getText()+"7");
+                if (!ed1.getText().toString().equals("∞")) {
+                    if (ed1.getText().toString().equals("0")) {
+                        ed1.setText("0.7");
+                    } else {
+                        ed1.setText(ed1.getText() + "7");
+                    }
+                }
             }
         });
 
         btn_8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ed1.setText(ed1.getText()+"8");
+                if (!ed1.getText().toString().equals("∞")) {
+                    if (ed1.getText().toString().equals("0")) {
+                        ed1.setText("0.8");
+                    } else {
+                        ed1.setText(ed1.getText() + "8");
+                    }
+                }
             }
         });
 
         btn_9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ed1.setText(ed1.getText()+"9");
+                if (!ed1.getText().toString().equals("∞")) {
+                    if (ed1.getText().toString().equals("0")) {
+                        ed1.setText("0.9");
+                    } else {
+                        ed1.setText(ed1.getText() + "9");
+                    }
+                }
             }
         });
 
         btn_dec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mDot == false){
-                    ed1.setText(ed1.getText()+".");
+                if (ed1.getText().toString().equals("")) {
+                    ed1.setText("0.");
                     mDot = true;
+                } else
+                    if(mDot == false){
+                        ed1.setText(ed1.getText()+".");
+                        mDot = true;
                 }
             }
         });
@@ -125,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ed1.getText().clear();
+                mDot = false;
             }
         });
 
@@ -132,15 +198,15 @@ public class MainActivity extends AppCompatActivity {
         btn_Mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if((ed1.getText().toString().equals("")) || (mMultiplication == true)) {
-                    mMultiplication = false;
-                }
-                else {
-                    Value1 = Float.parseFloat(ed1.getText() + "");
-                    mMultiplication = true;
-                    ed1.setText(null);
-                    mDot = false;
+                if (!ed1.getText().toString().equals("∞")) {
+                    if ((ed1.getText().toString().equals("")) || (mMultiplication == true)) {
+                        mMultiplication = false;
+                    } else {
+                        Value1 = Float.parseFloat(ed1.getText() + "");
+                        mMultiplication = true;
+                        ed1.setText(null);
+                        mDot = false;
+                    }
                 }
             }
         });
@@ -148,32 +214,31 @@ public class MainActivity extends AppCompatActivity {
         btn_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if((ed1.getText().toString().equals("")) || (mAddition == true)) {
-                    mAddition = false;
+                if (!ed1.getText().toString().equals("∞")) {
+                    if ((ed1.getText().toString().equals("")) || (mAddition == true)) {
+                        mAddition = false;
+                    } else {
+                        Value1 = Float.parseFloat(ed1.getText() + "");
+                        mAddition = true;
+                        ed1.setText(null);
+                        mDot = false;
+                    }
                 }
-                else {
-                    Value1 = Float.parseFloat(ed1.getText() + "");
-                    mAddition = true;
-                    ed1.setText(null);
-                    mDot = false;
-                }
-
             }
         });
 
         btn_Div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if((ed1.getText().toString().equals("")) || (mDivision == true)) {
-                    mDivision = false;
-                }
-                else {
-                    Value1 = Float.parseFloat(ed1.getText() + "");
-                    mDivision = true;
-                    ed1.setText(null);
-                    mDot = false;
+                if (!ed1.getText().toString().equals("∞")) {
+                    if ((ed1.getText().toString().equals("")) || (mDivision == true)) {
+                        mDivision = false;
+                    } else {
+                        Value1 = Float.parseFloat(ed1.getText() + "");
+                        mDivision = true;
+                        ed1.setText(null);
+                        mDot = false;
+                    }
                 }
             }
         });
@@ -181,15 +246,15 @@ public class MainActivity extends AppCompatActivity {
         btn_Sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if((ed1.getText().toString().equals("")) || (mSubtract == true)) {
-                    mSubtract = false;
-                }
-                else {
-                    Value1 = Float.parseFloat(ed1.getText() + "");
-                    mSubtract = true;
-                    ed1.setText(null);
-                    mDot = false;
+                if (!ed1.getText().toString().equals("∞")) {
+                    if ((ed1.getText().toString().equals("")) || (mSubtract == true)) {
+                        mSubtract = false;
+                    } else {
+                        Value1 = Float.parseFloat(ed1.getText() + "");
+                        mSubtract = true;
+                        ed1.setText(null);
+                        mDot = false;
+                    }
                 }
             }
         });
@@ -197,26 +262,26 @@ public class MainActivity extends AppCompatActivity {
         btn_calc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!ed1.getText().toString().equals("")) {
+                if((!ed1.getText().toString().equals("")) && (!ed1.getText().toString().equals("∞"))){
                     Value2 = Float.parseFloat(ed1.getText() + "");
+
 
                     if (mSubtract == true) {
                         ed1.setText(Value1 - Value2 + "");
                         mSubtract = false;
-                        mDot = false;
+                        mDot=true;
                     }
 
                     if (mAddition == true) {
                         ed1.setText(Value1 + Value2 + "");
                         mAddition = false;
-                        mDot = false;
+                        mDot=true;
                     }
 
                     if (mMultiplication == true) {
                         ed1.setText(Value1 * Value2 + "");
                         mMultiplication = false;
-                        mDot = false;
-                    }
+                        mDot=true;                    }
 
                     if (mDivision == true) {
                         if (Value2 == 0) {
@@ -225,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
                             ed1.setText(Value1 / Value2 + "");
                         }
                         mDivision = false;
-                        mDot = false;
+                        mDot = true;
 
                     }
                 }
