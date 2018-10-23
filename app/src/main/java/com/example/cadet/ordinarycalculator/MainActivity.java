@@ -8,7 +8,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     Button btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_0, btn_Add, btn_Sub,
-            btn_Mul, btn_Div, btn_calc, btn_dec, btn_clear;
+            btn_Mul, btn_Div, btn_calc, btn_dec, btn_clear, btn10;
     EditText ed1;
     float Value1, Value2;
     boolean mAddition, mSubtract, mMultiplication, mDivision, mDot ;
@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         ed1 = (EditText) findViewById(R.id.edText1);
         ed1.requestFocus();
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         btn_7 = (Button) findViewById(R.id.btn_7);
         btn_8 = (Button) findViewById(R.id.btn_8);
         btn_9 = (Button) findViewById(R.id.btn_9);
+        btn10 = (Button) findViewById(R.id.btn_9);
 
 
         btn_0.setOnClickListener(new View.OnClickListener() {
