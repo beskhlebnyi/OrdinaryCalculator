@@ -189,7 +189,8 @@
         android:ems="10"
         android:textAlignment="textEnd"
         android:textSize="24sp"
-        android:windowSoftInputMode="stateHidden"/>
+        android:windowSoftInputMode="stateHidden"
+        android:maxLength="10"/>
 
     <Button
         android:id="@+id/btn_calc"
