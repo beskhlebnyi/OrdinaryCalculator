@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">OrdinaryCalculator</string>
+    <string-array name="types_array">
+        <item>Time</item>
+        <item>Weight</item>
+        <item>Speed</item>
+    </string-array>
+
+    <string-array name="time_array">
+        <item>Second</item>
+        <item>Minute</item>
+        <item>Hour</item>
+        <item>Day</item>
+    </string-array>
+
+
 </resources>
