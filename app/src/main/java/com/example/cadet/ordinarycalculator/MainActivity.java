@@ -1,5 +1,6 @@
 package com.example.cadet.ordinarycalculator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
             return(true);
         case R.id.convertor_menu_id:
-
+            Intent intent = new Intent(MainActivity.this, ConverterActivity.class);
+            startActivity(intent);
             return(true);
         case R.id.exit_menu_id:
             finish();
