@@ -10,7 +10,7 @@
         android:title="Converter" />
     <item
         android:id="@+id/about_menu_id"
-        android:title="About us" />
+        android:title="About" />
     <item
         android:id="@+id/exit_menu_id"
         android:icon="@color/colorAccent"

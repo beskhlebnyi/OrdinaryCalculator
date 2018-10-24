@@ -3,13 +3,15 @@ package com.example.cadet.ordinarycalculator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_0, btn_Add, btn_Sub,
-            btn_Mul, btn_Div, btn_calc, btn_dec, btn_clear;
+            btn_Mul, btn_Div, btn_calc, btn_dec, btn_clear, btn10;
     EditText ed1;
     float Value1, Value2;
     boolean mAddition, mSubtract, mMultiplication, mDivision, mDot ;
@@ -21,31 +23,52 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) { switch(item.getItemId()) {
+        case R.id.about_menu_id:
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Ordinary calculator by Beskhlebnyi", Toast.LENGTH_SHORT);
+            toast.show();
+            return(true);
+        case R.id.convertor_menu_id:
+
+            return(true);
+        case R.id.exit_menu_id:
+            finish();
+            return(true);
+
+    }
+        return(super.onOptionsItemSelected(item));
+    }
+
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         ed1 = (EditText) findViewById(R.id.edText1);
         ed1.requestFocus();
         ed1.setShowSoftInputOnFocus(false);
 
-        btn_clear = (Button) findViewById(R.id.btn_clear);
-        btn_dec = (Button) findViewById(R.id.btn_dec);
-        btn_calc = (Button) findViewById(R.id.btn_calc);
-        btn_Mul = (Button) findViewById(R.id.btn_Mul);
-        btn_Div = (Button) findViewById(R.id.btn_Div);
-        btn_Sub = (Button) findViewById(R.id.btn_Sub);
-        btn_Add = (Button) findViewById(R.id.btn_Add);
-        btn_0 = (Button) findViewById(R.id.btn_0);
-        btn_1 = (Button) findViewById(R.id.btn_1);
-        btn_2 = (Button) findViewById(R.id.btn_2);
-        btn_3 = (Button) findViewById(R.id.btn_3);
-        btn_4 = (Button) findViewById(R.id.btn_4);
-        btn_5 = (Button) findViewById(R.id.btn_5);
-        btn_6 = (Button) findViewById(R.id.btn_6);
-        btn_7 = (Button) findViewById(R.id.btn_7);
-        btn_8 = (Button) findViewById(R.id.btn_8);
-        btn_9 = (Button) findViewById(R.id.btn_9);
+        btn_clear = findViewById(R.id.btn_clear);
+        btn_dec = findViewById(R.id.btn_dec);
+        btn_calc = findViewById(R.id.btn_calc);
+        btn_Mul = findViewById(R.id.btn_Mul);
+        btn_Div = findViewById(R.id.btn_Div);
+        btn_Sub = findViewById(R.id.btn_Sub);
+        btn_Add = findViewById(R.id.btn_Add);
+        btn_0 = findViewById(R.id.btn_0);
+        btn_1 = findViewById(R.id.btn_1);
+        btn_2 = findViewById(R.id.btn_2);
+        btn_3 = findViewById(R.id.btn_3);
+        btn_4 = findViewById(R.id.btn_4);
+        btn_5 = findViewById(R.id.btn_5);
+        btn_6 = findViewById(R.id.btn_6);
+        btn_7 = findViewById(R.id.btn_7);
+        btn_8 = findViewById(R.id.btn_8);
+        btn_9 = findViewById(R.id.btn_9);
+        btn10 = findViewById(R.id.btn_9);
 
 
         btn_0.setOnClickListener(new View.OnClickListener() {
