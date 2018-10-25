@@ -78,211 +78,214 @@ public class ConverterActivity extends AppCompatActivity {
         convert_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float inputed = Float.parseFloat(value1.getText() + "");
-                switch(v1_spinner.getSelectedItem().toString()) {
-                    case ("Second"):
-                        switch (v2_spinner.getSelectedItem().toString()) {
-                            case ("Second"):
-                                value2.setText(inputed + "");
-                                break;
-                            case ("Minute"):
-                                value2.setText(inputed / 60 + "");
-                                break;
-                            case ("Hour"):
-                                value2.setText(inputed / 3600 + "");
-                                break;
-                            case ("Day"):
-                                value2.setText(inputed / 86400 + "");
-                                break;
-                        }
-                        break;
 
-                    case ("Minute"):
-                        switch (v2_spinner.getSelectedItem().toString()) {
-                            case ("Second"):
-                                value2.setText(inputed * 60 + "");
-                                break;
-                            case ("Minute"):
-                                value2.setText(inputed + "");
-                                break;
-                            case ("Hour"):
-                                value2.setText(inputed / 60 + "");
-                                break;
-                            case ("Day"):
-                                value2.setText(inputed / 1440 + "");
-                                break;
-                        }
-                        break;
+                if((!value1.getText().toString().equals(""))) {
+                    float inputed = Float.parseFloat(value1.getText() + "");
+                    switch (v1_spinner.getSelectedItem().toString()) {
+                        case ("Second"):
+                            switch (v2_spinner.getSelectedItem().toString()) {
+                                case ("Second"):
+                                    value2.setText(inputed + "");
+                                    break;
+                                case ("Minute"):
+                                    value2.setText(inputed / 60 + "");
+                                    break;
+                                case ("Hour"):
+                                    value2.setText(inputed / 3600 + "");
+                                    break;
+                                case ("Day"):
+                                    value2.setText(inputed / 86400 + "");
+                                    break;
+                            }
+                            break;
 
-                    case ("Hour"):
-                        switch (v2_spinner.getSelectedItem().toString()) {
-                            case ("Second"):
-                                value2.setText(inputed * 3600 + "");
-                                break;
-                            case ("Minute"):
-                                value2.setText(inputed * 60 + "");
-                                break;
-                            case ("Hour"):
-                                value2.setText(inputed + "");
-                                break;
-                            case ("Day"):
-                                value2.setText(inputed * 24 + "");
-                                break;
-                        }
-                        break;
+                        case ("Minute"):
+                            switch (v2_spinner.getSelectedItem().toString()) {
+                                case ("Second"):
+                                    value2.setText(inputed * 60 + "");
+                                    break;
+                                case ("Minute"):
+                                    value2.setText(inputed + "");
+                                    break;
+                                case ("Hour"):
+                                    value2.setText(inputed / 60 + "");
+                                    break;
+                                case ("Day"):
+                                    value2.setText(inputed / 1440 + "");
+                                    break;
+                            }
+                            break;
 
-                    case ("Day"):
-                        switch (v2_spinner.getSelectedItem().toString()) {
-                            case ("Second"):
-                                value2.setText(inputed * 86400 + "");
-                                break;
-                            case ("Minute"):
-                                value2.setText(inputed * 1440 + "");
-                                break;
-                            case ("Hour"):
-                                value2.setText(inputed * 24 + "");
-                                break;
-                            case ("Day"):
-                                value2.setText(inputed + "");
-                                break;
-                        }
-                        break;
+                        case ("Hour"):
+                            switch (v2_spinner.getSelectedItem().toString()) {
+                                case ("Second"):
+                                    value2.setText(inputed * 3600 + "");
+                                    break;
+                                case ("Minute"):
+                                    value2.setText(inputed * 60 + "");
+                                    break;
+                                case ("Hour"):
+                                    value2.setText(inputed + "");
+                                    break;
+                                case ("Day"):
+                                    value2.setText(inputed * 24 + "");
+                                    break;
+                            }
+                            break;
 
-                    case ("Ton"):
-                        switch (v2_spinner.getSelectedItem().toString()) {
-                            case ("Ton"):
-                                value2.setText(inputed + "");
-                                break;
-                            case ("Kilogram"):
-                                value2.setText(inputed * 1000 + "");
-                                break;
-                            case ("Gram"):
-                                value2.setText(inputed * 1000000 + "");
-                                break;
-                            case ("Ounce"):
-                                value2.setText(inputed * 35273.962 + "");
-                                break;
-                        }
-                        break;
+                        case ("Day"):
+                            switch (v2_spinner.getSelectedItem().toString()) {
+                                case ("Second"):
+                                    value2.setText(inputed * 86400 + "");
+                                    break;
+                                case ("Minute"):
+                                    value2.setText(inputed * 1440 + "");
+                                    break;
+                                case ("Hour"):
+                                    value2.setText(inputed * 24 + "");
+                                    break;
+                                case ("Day"):
+                                    value2.setText(inputed + "");
+                                    break;
+                            }
+                            break;
 
-                    case ("Kilogram"):
-                        switch (v2_spinner.getSelectedItem().toString()) {
-                            case ("Ton"):
-                                value2.setText(inputed / 1000 + "");
-                                break;
-                            case ("Kilogram"):
-                                value2.setText(inputed + "");
-                                break;
-                            case ("Gram"):
-                                value2.setText(inputed * 1000 + "");
-                                break;
-                            case ("Ounce"):
-                                value2.setText(inputed * 35.274 + "");
-                                break;
-                        }
-                        break;
+                        case ("Ton"):
+                            switch (v2_spinner.getSelectedItem().toString()) {
+                                case ("Ton"):
+                                    value2.setText(inputed + "");
+                                    break;
+                                case ("Kilogram"):
+                                    value2.setText(inputed * 1000 + "");
+                                    break;
+                                case ("Gram"):
+                                    value2.setText(inputed * 1000000 + "");
+                                    break;
+                                case ("Ounce"):
+                                    value2.setText(inputed * 35273.962 + "");
+                                    break;
+                            }
+                            break;
 
-                    case ("Gram"):
-                        switch (v2_spinner.getSelectedItem().toString()) {
-                            case ("Ton"):
-                                value2.setText(inputed / 1000000 + "");
-                                break;
-                            case ("Kilogram"):
-                                value2.setText(inputed / 1000 + "");
-                                break;
-                            case ("Gram"):
-                                value2.setText(inputed + "");
-                                break;
-                            case ("Ounce"):
-                                value2.setText(inputed / 28.35 + "");
-                                break;
-                        }
-                        break;
+                        case ("Kilogram"):
+                            switch (v2_spinner.getSelectedItem().toString()) {
+                                case ("Ton"):
+                                    value2.setText(inputed / 1000 + "");
+                                    break;
+                                case ("Kilogram"):
+                                    value2.setText(inputed + "");
+                                    break;
+                                case ("Gram"):
+                                    value2.setText(inputed * 1000 + "");
+                                    break;
+                                case ("Ounce"):
+                                    value2.setText(inputed * 35.274 + "");
+                                    break;
+                            }
+                            break;
 
-                    case ("Ounce"):
-                        switch (v2_spinner.getSelectedItem().toString()) {
-                            case ("Ton"):
-                                value2.setText(inputed / 35273.962 + "");
-                                break;
-                            case ("Kilogram"):
-                                value2.setText(inputed / 35.274 + "");
-                                break;
-                            case ("Gram"):
-                                value2.setText(inputed * 28.35 + "");
-                                break;
-                            case ("Ounce"):
-                                value2.setText(inputed + "");
-                                break;
-                        }
-                        break;
+                        case ("Gram"):
+                            switch (v2_spinner.getSelectedItem().toString()) {
+                                case ("Ton"):
+                                    value2.setText(inputed / 1000000 + "");
+                                    break;
+                                case ("Kilogram"):
+                                    value2.setText(inputed / 1000 + "");
+                                    break;
+                                case ("Gram"):
+                                    value2.setText(inputed + "");
+                                    break;
+                                case ("Ounce"):
+                                    value2.setText(inputed / 28.35 + "");
+                                    break;
+                            }
+                            break;
 
-                    case ("m/s"):
-                        switch (v2_spinner.getSelectedItem().toString()) {
-                            case ("m/s"):
-                                value2.setText(inputed + "");
-                                break;
-                            case ("km/h"):
-                                value2.setText(inputed * 3.6 + "");
-                                break;
-                            case ("ml/h"):
-                                value2.setText(inputed * 2.237 + "");
-                                break;
-                            case ("kn"):
-                                value2.setText(inputed * 1.944 + "");
-                                break;
-                        }
-                        break;
+                        case ("Ounce"):
+                            switch (v2_spinner.getSelectedItem().toString()) {
+                                case ("Ton"):
+                                    value2.setText(inputed / 35273.962 + "");
+                                    break;
+                                case ("Kilogram"):
+                                    value2.setText(inputed / 35.274 + "");
+                                    break;
+                                case ("Gram"):
+                                    value2.setText(inputed * 28.35 + "");
+                                    break;
+                                case ("Ounce"):
+                                    value2.setText(inputed + "");
+                                    break;
+                            }
+                            break;
 
-                    case ("km/h"):
-                        switch (v2_spinner.getSelectedItem().toString()) {
-                            case ("m/s"):
-                                value2.setText(inputed / 3.6 + "");
-                                break;
-                            case ("km/h"):
-                                value2.setText(inputed + "");
-                                break;
-                            case ("ml/h"):
-                                value2.setText(inputed / 1.609 + "");
-                                break;
-                            case ("kn"):
-                                value2.setText(inputed / 1.852 + "");
-                                break;
-                        }
-                        break;
+                        case ("m/s"):
+                            switch (v2_spinner.getSelectedItem().toString()) {
+                                case ("m/s"):
+                                    value2.setText(inputed + "");
+                                    break;
+                                case ("km/h"):
+                                    value2.setText(inputed * 3.6 + "");
+                                    break;
+                                case ("ml/h"):
+                                    value2.setText(inputed * 2.237 + "");
+                                    break;
+                                case ("kn"):
+                                    value2.setText(inputed * 1.944 + "");
+                                    break;
+                            }
+                            break;
 
-                    case ("ml/h"):
-                        switch (v2_spinner.getSelectedItem().toString()) {
-                            case ("m/s"):
-                                value2.setText(inputed / 2.237 + "");
-                                break;
-                            case ("km/h"):
-                                value2.setText(inputed * 1.609 + "");
-                                break;
-                            case ("ml/h"):
-                                value2.setText(inputed + "");
-                                break;
-                            case ("kn"):
-                                value2.setText(inputed / 1.151 + "");
-                                break;
-                        }
-                        break;
+                        case ("km/h"):
+                            switch (v2_spinner.getSelectedItem().toString()) {
+                                case ("m/s"):
+                                    value2.setText(inputed / 3.6 + "");
+                                    break;
+                                case ("km/h"):
+                                    value2.setText(inputed + "");
+                                    break;
+                                case ("ml/h"):
+                                    value2.setText(inputed / 1.609 + "");
+                                    break;
+                                case ("kn"):
+                                    value2.setText(inputed / 1.852 + "");
+                                    break;
+                            }
+                            break;
 
-                    case ("kn"):
-                        switch (v2_spinner.getSelectedItem().toString()) {
-                            case ("m/s"):
-                                value2.setText(inputed / 2.237 + "");
-                                break;
-                            case ("km/h"):
-                                value2.setText(inputed * 1.852 + "");
-                                break;
-                            case ("ml/h"):
-                                value2.setText(inputed / 1.151 + "");
-                                break;
-                            case ("kn"):
-                                value2.setText(inputed + "");
-                                break;
-                        }
-                        break;
+                        case ("ml/h"):
+                            switch (v2_spinner.getSelectedItem().toString()) {
+                                case ("m/s"):
+                                    value2.setText(inputed / 2.237 + "");
+                                    break;
+                                case ("km/h"):
+                                    value2.setText(inputed * 1.609 + "");
+                                    break;
+                                case ("ml/h"):
+                                    value2.setText(inputed + "");
+                                    break;
+                                case ("kn"):
+                                    value2.setText(inputed / 1.151 + "");
+                                    break;
+                            }
+                            break;
+
+                        case ("kn"):
+                            switch (v2_spinner.getSelectedItem().toString()) {
+                                case ("m/s"):
+                                    value2.setText(inputed / 2.237 + "");
+                                    break;
+                                case ("km/h"):
+                                    value2.setText(inputed * 1.852 + "");
+                                    break;
+                                case ("ml/h"):
+                                    value2.setText(inputed / 1.151 + "");
+                                    break;
+                                case ("kn"):
+                                    value2.setText(inputed + "");
+                                    break;
+                            }
+                            break;
+                    }
                 }
             }
         });

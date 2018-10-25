@@ -42,14 +42,13 @@ public class MainActivity extends AppCompatActivity {
         return(super.onOptionsItemSelected(item));
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        ed1 = (EditText) findViewById(R.id.edText1);
+        ed1 =  findViewById(R.id.edText1);
         ed1.requestFocus();
         ed1.setShowSoftInputOnFocus(false);
 
@@ -337,11 +336,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-
             }
         });
-
     }
-
-
 }
