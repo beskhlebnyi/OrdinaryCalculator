@@ -50,6 +50,7 @@ public class ConverterActivity extends AppCompatActivity {
             String result = extras.getString("result");
             value1.setText(result);
         }
+
         type_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

@@ -39,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
             Intent result_intent = new Intent(MainActivity.this, ConverterActivity.class);
             result_intent.putExtra("result",result);
             startActivity(result_intent);
-
-
             return(true);
         case R.id.exit_menu_id:
             new AlertDialog.Builder(this)
@@ -361,9 +359,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        String result = ed1.getText().toString();
-        Intent result_intent = new Intent(MainActivity.this, ConverterActivity.class);
-        result_intent.putExtra("result",result);
-        startActivity(result_intent);
+
     }
 }
