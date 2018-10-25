@@ -31,8 +31,14 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
             return(true);
         case R.id.convertor_menu_id:
-            Intent intent = new Intent(MainActivity.this, ConverterActivity.class);
-            startActivity(intent);
+
+            String result = ed1.getText().toString();
+            Intent result_intent = new Intent(MainActivity.this, ConverterActivity.class);
+            result_intent.putExtra("result",result);
+            startActivity(result_intent);
+
+           /* Intent intent = new Intent(MainActivity.this, ConverterActivity.class);
+            startActivity(intent);*/
             return(true);
         case R.id.exit_menu_id:
             finish();
@@ -338,5 +344,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        String result = ed1.getText().toString();
+        Intent result_intent = new Intent(MainActivity.this, ConverterActivity.class);
+        result_intent.putExtra("result",result);
+        startActivity(result_intent);
     }
 }

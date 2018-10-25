@@ -18,6 +18,8 @@ public class ConverterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_converter);
 
+
+
         final Spinner type_spinner = findViewById(R.id.type_spinner);
         final Spinner v1_spinner = findViewById(R.id.first_value_spinner);
         final Spinner v2_spinner = findViewById(R.id.second_value_spinner);
@@ -27,6 +29,8 @@ public class ConverterActivity extends AppCompatActivity {
         convert_button = findViewById(R.id.convert_button);
         value1 = findViewById(R.id.start_value);
         value2 = findViewById(R.id.result);
+
+
 
 
         String[] time_values = getResources().getStringArray(R.array.time_array);
@@ -43,7 +47,12 @@ public class ConverterActivity extends AppCompatActivity {
         final ArrayAdapter<String> speed_adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, speed_values);
         speed_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String result = extras.getString("result");
+            value1.setText(result);
+            //The key argument here must match that used in the other activity
+        }
         type_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -80,6 +89,7 @@ public class ConverterActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if((!value1.getText().toString().equals(""))) {
+
                     float inputed = Float.parseFloat(value1.getText() + "");
                     switch (v1_spinner.getSelectedItem().toString()) {
                         case ("Second"):
