@@ -22,7 +22,7 @@
     <string-array name="speed_array">
         <item>m/s</item>
         <item>km/h</item>
-        <item>m/h</item>
+        <item>ml/h</item>
         <item>kn</item>
     </string-array>
 
