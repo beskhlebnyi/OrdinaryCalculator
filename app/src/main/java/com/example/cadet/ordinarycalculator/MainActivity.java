@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.view.View;
 import android.widget.Toast;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+
 
 public class MainActivity extends AppCompatActivity {
     Button btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_0, btn_Add, btn_Sub,
@@ -37,12 +40,25 @@ public class MainActivity extends AppCompatActivity {
             result_intent.putExtra("result",result);
             startActivity(result_intent);
 
-           /* Intent intent = new Intent(MainActivity.this, ConverterActivity.class);
-            startActivity(intent);*/
+
             return(true);
         case R.id.exit_menu_id:
-            finish();
+            new AlertDialog.Builder(this)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setTitle("Closing app")
+                    .setMessage("Are you sure you want to close app, young man?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
             return(true);
+
 
     }
         return(super.onOptionsItemSelected(item));

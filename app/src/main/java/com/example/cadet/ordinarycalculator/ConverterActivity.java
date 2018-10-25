@@ -31,8 +31,6 @@ public class ConverterActivity extends AppCompatActivity {
         value2 = findViewById(R.id.result);
 
 
-
-
         String[] time_values = getResources().getStringArray(R.array.time_array);
         String[] weight_values = getResources().getStringArray(R.array.weight_array);
         String[] speed_values = getResources().getStringArray(R.array.speed_array);
@@ -51,7 +49,6 @@ public class ConverterActivity extends AppCompatActivity {
         if (extras != null) {
             String result = extras.getString("result");
             value1.setText(result);
-            //The key argument here must match that used in the other activity
         }
         type_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
