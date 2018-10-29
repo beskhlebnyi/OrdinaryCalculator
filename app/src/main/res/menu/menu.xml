@@ -9,6 +9,9 @@
         android:checkable="false"
         android:title="Converter" />
     <item
+        android:id="@+id/history_menu_id"
+        android:title="History" />
+    <item
         android:id="@+id/about_menu_id"
         android:title="About" />
     <item
