@@ -33,8 +33,11 @@ public class MainActivity extends AppCompatActivity {
                     "Ordinary calculator by Beskhlebnyi", Toast.LENGTH_SHORT);
             toast.show();
             return(true);
+        case R.id.history_menu_id:
+            Intent historyIntent = new Intent(this, HistoryActivity.class);
+            startActivity(historyIntent);
+            return(true);
         case R.id.convertor_menu_id:
-
             String result = ed1.getText().toString();
             Intent result_intent = new Intent(MainActivity.this, ConverterActivity.class);
             result_intent.putExtra("result",result);
