@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             return(true);
         case R.id.history_menu_id:
             Intent historyIntent = new Intent(this, HistoryActivity.class);
+            historyIntent.putExtra("calculations", db.selectCalculations());
             startActivity(historyIntent);
             return(true);
         case R.id.convertor_menu_id:

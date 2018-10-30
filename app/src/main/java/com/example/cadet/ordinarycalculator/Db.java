@@ -2,8 +2,13 @@ package com.example.cadet.ordinarycalculator;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.EditText;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Db extends SQLiteOpenHelper {
@@ -36,6 +41,25 @@ public class Db extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, values);
 
         close();
+    }
+
+    public String selectCalculations(){
+        db = this.getReadableDatabase();
+        String query = "select calculation from "+TABLE_NAME;
+        Cursor cursor = db.rawQuery(query, null);
+
+        cursor.moveToFirst();
+        List<String> calculations = new ArrayList<>();
+        if (cursor.moveToFirst()){
+            calculations.add(cursor.getString(cursor.getColumnIndex(COLUMN_RESULT)));
+            while(cursor.moveToNext()){
+                calculations.add(cursor.getString(cursor.getColumnIndex(COLUMN_RESULT)));
+            }
+        }
+        cursor.close();
+        db.close();
+
+        return String.valueOf(calculations);
     }
 
     @Override
