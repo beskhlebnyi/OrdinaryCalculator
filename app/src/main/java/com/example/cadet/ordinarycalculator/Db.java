@@ -14,7 +14,8 @@ public class Db extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "calculations";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_RESULT = "calculation";
-    private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS calculations (id integer PRIMARY KEY AUTOINCREMENT, calculation text);";
+    private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS calculations " +
+            "(id integer PRIMARY KEY AUTOINCREMENT, calculation text);";
 
     public Db(Context context)
     {
