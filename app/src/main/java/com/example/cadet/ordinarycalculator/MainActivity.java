@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     boolean mAddition, mSubtract, mMultiplication, mDivision, mDot ;
     String calculation_string;
 
-    Db db =new Db(this);
+    Db db = new Db(this);
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
