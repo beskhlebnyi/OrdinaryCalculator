@@ -31,7 +31,7 @@ public class Db extends SQLiteOpenHelper {
     public void insertCalculation(String calculation){
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COLUMN_RESULT, calculation.toString());
+        values.put(COLUMN_RESULT, calculation);
         db.insert(TABLE_NAME, null, values);
 
         close();
