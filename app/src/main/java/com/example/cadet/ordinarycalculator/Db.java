@@ -49,17 +49,21 @@ public class Db extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
 
         cursor.moveToFirst();
-        List<String> calculations = new ArrayList<>();
-        if (cursor.moveToFirst()){
-            calculations.add(cursor.getString(cursor.getColumnIndex(COLUMN_RESULT)));
-            while(cursor.moveToNext()){
-                calculations.add(cursor.getString(cursor.getColumnIndex(COLUMN_RESULT)));
-            }
-        }
-        cursor.close();
-        db.close();
 
-        return String.valueOf(calculations);
+        String  calc = "";
+        cursor.moveToFirst();
+
+        while (cursor.isAfterLast() == false) {
+
+            calc += cursor.getString(cursor
+                    .getColumnIndex(COLUMN_RESULT)) + "\n";
+            cursor.moveToNext();
+        }
+
+        cursor.close();
+
+
+        return calc;
     }
 
     @Override
