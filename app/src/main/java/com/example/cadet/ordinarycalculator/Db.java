@@ -50,12 +50,12 @@ public class Db extends SQLiteOpenHelper {
 
         cursor.moveToFirst();
 
-        String  calc = "";
+        String  calculation = "";
         cursor.moveToFirst();
 
         while (cursor.isAfterLast() == false) {
 
-            calc += cursor.getString(cursor
+            calculation += cursor.getString(cursor
                     .getColumnIndex(COLUMN_RESULT)) + "\n";
             cursor.moveToNext();
         }
@@ -63,7 +63,7 @@ public class Db extends SQLiteOpenHelper {
         cursor.close();
 
 
-        return calc;
+        return calculation;
     }
 
     @Override

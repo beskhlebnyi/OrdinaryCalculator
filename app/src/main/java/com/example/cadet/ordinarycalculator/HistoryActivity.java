@@ -15,17 +15,12 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history);
 
         EditText ed = findViewById(R.id.history_field);
+        ed.requestFocus();
+        ed.setShowSoftInputOnFocus(false);
+
         Db db = new Db(this);
-
-
 
         ed.setText(db.selectCalculations());
 
-
-
     }
-
-
-
-
 }
