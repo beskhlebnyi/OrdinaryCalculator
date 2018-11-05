@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     EditText ed1;
     float Value1, Value2;
     boolean mAddition, mSubtract, mMultiplication, mDivision, mDot ;
+    String calculation_string;
+
+    Db db = new Db(this);
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -255,6 +258,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ed1.getText().clear();
                 mDot = false;
+                calculation_string = null;
             }
         });
 
@@ -331,26 +335,36 @@ public class MainActivity extends AppCompatActivity {
 
 
                     if (mSubtract == true) {
+                        calculation_string = Value1 + " - " + Value2 + " = " + (Value1 - Value2);
+                        db.insertCalculation(calculation_string);
                         ed1.setText(Value1 - Value2 + "");
                         mSubtract = false;
                         mDot=true;
                     }
 
                     if (mAddition == true) {
+                        calculation_string = Value1 + " + " + Value2 + " = " + (Value1 + Value2);
+                        db.insertCalculation(calculation_string);
                         ed1.setText(Value1 + Value2 + "");
                         mAddition = false;
                         mDot=true;
                     }
 
                     if (mMultiplication == true) {
+                        calculation_string = Value1 + " * " + Value2 + " = " + (Value1 * Value2);
+                        db.insertCalculation(calculation_string);
                         ed1.setText(Value1 * Value2 + "");
                         mMultiplication = false;
                         mDot=true;                    }
 
                     if (mDivision == true) {
                         if (Value2 == 0) {
+                            calculation_string = Value1 + " / " + Value2 + " = ∞ " ;
+                            db.insertCalculation(calculation_string);
                             ed1.setText("∞");
                         } else {
+                            calculation_string = Value1 + " / " + Value2 + " = " + (Value1 / Value2);
+                            db.insertCalculation(calculation_string);
                             ed1.setText(Value1 / Value2 + "");
                         }
                         mDivision = false;
